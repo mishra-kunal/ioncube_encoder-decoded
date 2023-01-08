@@ -1,0 +1,902 @@
+ionCube PHP Encoder 12.0 Release Notes
+======================================
+
+Unless marked otherwise, changes refer to the Encoder products within
+this release; GUI refers to the GUI supplied with the Windows and MacOS 
+versions.
+
+Version 12.0.2 - 7 September 2022
+---------------------------------
+
+* GUI: Show project path in status line while hovering over recent items
+  in the startup panel.
+
+* GUI: Improved help access and handling of F1 on Windows. Help button 
+  added to the project settings dialog to show related help. 
+
+* GUI: New feature for easier setting of lengthy text in the project settings
+  "Custom 'No Loader' expression" field.
+
+* GUI: Font for the project settings custom header text field changed 
+  to a monospaced font.
+
+* GUI: Minor fix with exporting some project settings in command line Encoder 
+  project file format.
+
+* Encoder: Fix for issue encoding some PHP 8.1 code on 32 bit architectures.
+
+* Loader: Fix for issue using PHP 8.1 encoded files containing custom
+  error messages.
+ 
+ 
+Version 12.0.1 - 24 August 2022
+-------------------------------
+
+* GUI: New language option for bundling PHP 7.4 and 8.1 encoded files
+  together as a single file.
+
+* GUI: Bundling performance boosted by using the --only-include-encoded-files
+  Encoder option to only process files to be encoded, eliminating duplicate 
+  processing of other files when adding to a bundle.
+
+* GUI: Items added to the Project menu to open a terminal command line
+  window on the source, target and project settings locations. 
+  The terminal program can be selected in a new Applications > Terminal 
+  section within preferences. The program to be run by the GUI is also shown 
+  in the status line when highlighting these menu items.
+  EXPERIMENTAL: This feature is experimental and may change in 
+  future releases.
+
+* GUI: Close Section item added to the Log Tree right-click context menu 
+  that closes the corresponding section of the log tree.
+
+* GUI: Excluded Directories node added to the Log Tree.
+
+* GUI: F5 accelerator added to trigger the default build action
+  (same action as using the play (build) button).
+
+* GUI: Help menu item added for submitting a feature request.
+
+* GUI: Help menu item added to review release notes.
+
+* GUI: Miscellaneous minor adjustments.
+
+* GUI: Various GUI user guide updates, and describe some previously
+  unmentioned features.  
+
+* The --without-runtime-loader-support Encoder option is now deprecated.
+  It is still recognised but undocumented, and is now the default.
+  This change means that PHP code at the start of encoded files that
+  would attempt to install the Loader using the dl() PHP function will
+  no longer be present. dl() has been disabled by default in most
+  PHP configurations since PHP 5.3.0, so the code would be ineffective 
+  and unnecessary bloat, which this change eliminates.
+
+* A new option --with-runtime-loader-support is added for back 
+  compatibility, and includes the PHP runtime install code
+  mentioned above in the header of encoded files. Note that runtime
+  Loader install requires dl() to be enabled, and this is unlikely 
+  to be the case in general. The usual way to install the Loader 
+  is via the php.ini file.
+
+* The default non-runtime install PHP code at the start of encoded 
+  files is updated to include a test for the case where a file must be
+  corrupted (the PHP header being processed rather than the encoded 
+  payload when the Loader is installed implies the file is not recognised
+  as encoded, i.e. corrupted). A custom action or message for when a file 
+  cannot be processed is intentionally unaffected by this change to
+  retain previous behaviour.
+  
+
+Version 12.0.0 - 12 August 2022
+-------------------------------
+
+* Support is added for encoding files using PHP 8.1 syntax.
+
+* Minor Loader change - From PHP 8, ioncube_loader_iversion() now returns an 
+  integer type rather than an integer as a string. e.g. 120000 rather 
+  than "120000" for Loader version 12.0.0
+
+* GUI - the option to enable short open tags in the UI is unavailable if 
+  encoding as PHP 8 and will be removed in a future version.
+  
+* Updated default text if no Loader is installed.
+
+* Minor fixes.
+
+
+Deprecated features
+
+* The --no-short-open-tags option will be removed in a future version as 
+  short open tags are removed as a concept in PHP 8. 
+
+* The --disable-dynamic-decoding feature is no longer required and is
+  now deprecated.
+
+
+Removal of legacy features
+
+* The options --allow-untrusted-extensions and --disallow-untrusted-extensions 
+  have been undocumented and had no effect from version 8, but have still been
+  recognised for back compatibility. These have now been removed. 
+
+* The legacy --allow-asp-tags option that was still recognised but removed from
+  documentation and the GUI many years ago is now fully removed.
+
+
+Version 11.0.2 - 10 December 2021
+---------------------------------
+
+This minor release provides GUI and cosmetic documentation changes only.
+
+* Refine the toolbar on MacOS.
+
+* Resolve scaling issue with vertical toolbar orientation on MacOS.
+
+* Fix for FTP hostname showing as unset in project settings (special
+  edition GUI).
+
+* Fix for custom FTP port not taking effect (special edition GUI).
+
+* Improve news content fetching.
+
+* Cosmetic documentation changes.
+
+
+Version 11.0.1 - 27 November 2021
+---------------------------------
+
+* Update for Linux, FreeBSD and MacOS versions. 
+
+
+Version 11.0.0 - November 2021
+------------------------------
+
+* Support is added for encoding files using PHP 7.4 syntax
+
+* Added --skip to fully ignore project files or directories. 
+  Unlike --ignore, which ignores items but will still 
+  traverse directories so any matching --keep rules can be
+  applied, --skip will fully ignore items. This may reduce 
+  encoding times and is recommended over using --ignore.
+
+* License creator program (make_license)
+  - Added --decode-format to specify the output format when
+    decoding license files. Output can be in the legacy 
+    format or various json formats.
+
+  - Added --compat to enable selected compatibility with
+    previous versions. Currently this may be used 
+    with the value "no-bool-props" to request legacy
+    behaviour for parsing of boolean property values. 
+
+  - Added support for Boolean property features
+    Unquoted license property values of true and false 
+    will now be stored and returned as boolean values 
+    rather than strings if queried via the Loader API.
+    The new option --compat no-bool-props can be used to
+    obtain previous behaviour, or bool values could be
+    expressed as strings by quoting, 
+    e.g. --add-property foo="true"  
+
+* GUI - New features, enhancements and bug fixes, including:
+  - Support for high and per-dpi screens.
+
+  - Native MacOS Dark Mode support.
+  
+  - Populate license fields in create license dialog from an
+    existing license file by drag/drop.
+
+  - New JSON formats when decoding license files.
+
+  - The size of project and directory history has been increased.
+
+  - Support for the new Encoder skip feature with project
+    tree settings.
+
+* Fix for empty license property values
+  - Empty arrays can now be specified as property values with { }
+
+* Fix for displaying floating point property values
+  - Floating point property values are now displayed as expected 
+    when decoded in legacy mode.
+
+
+PLEASE NOTE as mentioned above that the license file creator
+that comes with the Pro and Cerberus editions now stores 
+boolean properties as booleans rather than strings, e.g. 
+  --add-property foo=true 
+This behaviour is as would be expected, but differs from that
+of previous releases. The old behaviour can be obtained by
+expressing the value as a string or with a new compatibility
+option.
+
+
+Version 10.2.2 - April 2019
+---------------------------
+
+* Fix for the version 10.2.1 PHP 7.1 and 7.2 encoders where a dynamic key could 
+be bound to a closure within a function rather than the function itself.
+
+
+Version 10.2.1 - February 2019
+------------------------------
+
+* GUI preference added to better support HiDPI displays on Windows.
+
+* Fix for script-level dynamic keys not being recognised by the 7.1 
+and 7.2 encoders.
+
+* Fix for a memory leak that could occur when using obfuscation with the
+7.1 and 7.2 encoders.
+
+* Correction to help text for "file:" type external keys.
+
+* Some corrections to the User Guide.
+
+
+Version 10.2.0 - February 2018
+------------------------------
+
+* New Encoder for PHP 7.2 language features.
+
+* Added --bundle and --add-to-bundle options that allow
+  multiple encodings to be bundled into one file with short forms
+  -B and -A, respectively. 
+
+* Added a --keep-comments option that means header comments will be 
+  prefixed to an extra encoding appended to a bundle.
+
+* Fix for a crash that could occur when the Encoder was attempting
+to acquire a licence for itself and permissions on the 
+licensing directory meant that files could not be created.
+
+* Fix for an issue in the 7.1 Encoder whereby private methods were 
+not called if there was an overriding method in a sub-class. 
+Specifically, there was a call to the private method from a parent 
+method and that parent method had itself been called from the child class.
+
+* Fix for incorrect yield from parsing corresponding to PHP bug 74302 
+(https://bugs.php.net/bug.php?id=74302).
+
+
+Version 10.0.1 - August 2017
+----------------------------
+
+* Fix for possible mangling of class type hints on parameters.
+
+
+Version 10.0.0 - August 2017
+----------------------------
+
+* The PHP Encoder for PHP 7.1 language features is included.
+
+* GUI: Updates to the GUI for support of PHP 7.1
+
+* GUI: Removed option to disable Dynamic Decoding. Projects previously
+  encoded with dynamic decoding disabled will still work as normal
+
+* Documentation updates and fixes.
+
+Functional changes from previous versions
+-----------------------------------------
+
+* The option --disable-dynamic-decoding option has been deprecated and 
+  is no longer documented.
+
+
+
+Version 9.0.5 - November 2016
+-----------------------------
+
+* Commands --acquire-license and --release-license have been changed
+  to --activate and --deactivate, although --acquire-license and
+  --release-license can still be used.
+
+* GUI: Changes to some labels to follow the update from aquiring to
+  activating a license.
+
+* The command line Encoder defaults to encoding for PHP 5.6+ if no
+  language option is specified.
+
+* Updated examples, showing more of the protection features of the Encoder.
+
+* Documentation updates.
+
+
+Version 9.0.4 - 11 November 2016
+--------------------------------
+
+* Fix for problem with the __DIR__ constant whereby it would not be
+  processed correctly if part of one of PHP 5.6's constant expressions.
+
+* Fix for problem with the __FILE__ constant whereby it would be
+  replaced with the path to the source file rather than the encoded 
+  file.
+
+* Fix for closures not being found if they are used in a namespace
+  and obfuscation of functions is used.
+
+* GUI: Minor fixes.
+
+* GUI: New status bar indicator to warn if Encoder version selection
+  is lower than it could be.
+
+* Documentation updates.
+
+* Please note that version 9.0.3 was not generally released.
+
+
+Version 9.0.2 - 12 October 2015
+-------------------------------
+
+* GUI: Avoid generating command line option --keep for folders in
+  cases where this is implied by the use of other options.
+
+* GUI: Fix for emitting unnecessary --copy/--encrypt options
+  for folders that had first been set to non-default processing rules
+  and then excluded from the project.
+
+* OSX GUI: Rearrange controls to reduce the height of the project 
+  settings dialog to fit on an 11" Mac book air screen.
+
+* OSX GUI: Fix for not opening a project file when double clicked unless
+  the application is already running.
+
+* Documentation updates.
+
+Functional changes from previous versions
+-----------------------------------------
+
+* OSX GUI: The option to bundle Loaders when building a project is
+  removed. Including Loaders with a project is not recommended, but
+  if desired, this is better achieved by including Loaders in the 
+  project source or with a post-encoding step.
+
+Deprecated features
+-------------------
+
+* Windows GUI: The option to bundle Loaders when building a project 
+  will be removed in a future release. Including Loaders with a project
+  is not recommended as it can result in project bloat and distribution
+  of old Loaders. If necessary, it can be easily achieved with more
+  flexibility than the current feature by including Loaders in the 
+  project source or with a post-encoding step.
+
+
+Version 9.0.1 - 19th August 2015
+--------------------------------
+
+* Fix for PHP 5.6 magic method __debugInfo not being excluded from obfuscation.
+
+* Fix for an issue where a function call in a switch may result in the 
+  incorrect branch being executed.
+
+* Fix for the 64-bit Linux encoders where it does not encode ints longer than 
+  the 32-bit MAX_INT correctly.
+
+* Fix for memory leak when writing the encoded files.
+
+* Addition to User Guide regarding the uniqueness of encoding key values.
+
+
+Version 9.0.0 - 11 May 2015
+---------------------------
+
+* Language support: Encoder added to encode scripts using PHP 5.6
+  language syntax, plus Encoders for earlier versions of the PHP grammar.
+
+* Code security: Support for external protection keys, just-in-time (JIT)
+  decoding of protected code, and an innovative new code protection
+  mechanism using dynamic run-time generated encryption keys. 
+
+* Documentation updates and fixes.
+
+Changes from previous versions
+------------------------------
+
+* Encoder naming changes: 
+    * The PHP 4 Encoder is renamed from ioncube_encoder to
+      ioncube_encoder4.
+
+    * Current Encoders are suffixed with _9.0
+
+    For Linux and FreeBSD
+
+    * All Encoders are now located in a bin directory.
+
+    * A shell script ioncube_encoder.sh is provided to launch the
+      Encoder. Shell script options select current, legacy or obsolete
+      Encoders, as well as the desired PHP language version. On Linux,
+      32 or 64 bit executables are selected automatically.
+      Using the shell script to launch the Encoder is recommended to
+      hide future naming changes to the actual Encoder programs.
+
+
+
+Version 8.3.3 - 2 Mar 2015
+---------------------------
+
+* Linux: A 64 bit version of the Encoder and license generator is included in
+  the Linux distribution.
+
+
+Version 8.3.2 - 17 Feb 2015
+---------------------------
+
+* Fix for issue where parse errors may be garbled with the PHP 5.5 encoder.
+
+* Product licensing enhancements.
+
+* Windows - Product licensing via command line with --acquire-license
+  is now supported.
+
+* User Guide PDF updates.
+
+
+Version 8.3.1.2 - 28 Oct 2014
+-----------------------------
+
+* GUI (OSX, Basic edition) - fix for Help menu.
+
+
+Version 8.3.1.1 - 1 Oct 2014
+----------------------------
+
+* GUI - fix for possible issue with projects having many excluded folders.
+
+
+Version 8.3.1 - 19 Sep 2014
+---------------------------
+
+* Added --create-target option to create the target directory path if
+  it does not exist.
+
+* Added --ignore-interface-aliases option for file and license based 
+  restrictions; available with command line encoding only. Supported
+  with Loader 4.6.2 and higher.
+
+* GUI: In the dialog displayed on startup if opening the last active
+  project file fails, it is now possible to tell the GUI to forget the
+  project file via the dialog as well as via the File menu.
+
+* GUI: Improvements to interface behaviour when using drag/drop of
+  server data files on the create license dialog.
+
+* GUI: Feature added to allow browsing for a server data file as well
+  as drag drop when creating license files.
+
+* GUI: New toolbar icons for the OS X GUI.
+
+* GUI: Many minor GUI adjustments.
+
+* Fix for issue where a loop with a trivial condition could cause an
+  infinite loop in the encoder.
+
+* Fix for issue where obfuscation of functions could lead to a
+  function not being found in the global namespace even if it had been
+  added to an obfuscation exclusion file.
+
+* Fix for incorrect handling when the path to the encoding target does
+  not fully exist. In this case an error will now be produced or the
+  target path will be created if using the new --create-target option.
+
+* PDF documentation updates and corrections.
+
+
+Version 8.3.0p1 - 3 June 2014
+-----------------------------
+
+* GUI: Fix for possibility of a false report about incorrect installation
+  when launching the GUI on Windows if other versions of the software
+  are still installed.
+
+* GUI: Minor GUI painting fixes and improvements.
+
+* GUI: Fix for issue when reading server data files.
+
+
+Version 8.3.0 - 17 April 2014
+-----------------------------
+
+* The PHP Encoder for PHP 5.5 language features is included.
+
+* Windows - Licensing fixes for legacy (version 7) and obsolete encoders.
+
+
+Version 8.2.0 - 31 January 2014
+-------------------------------
+
+* GUI: Initial release of the OSX GUI.
+  
+* GUI: Added Project Wizard. This can automatically setup a project using
+  a few basic settings.
+  
+* GUI: A "Quickstart" tab has been added to project settings. This
+  consolidates the essential settings onto one tab, allowing these to
+  be easily changed in one place.  Settings that have been added to
+  this tab are still present on their original tabs.
+
+* GUI: An "Actions" tab has been added to the project settings. The
+  "Post-encoding command" from the "Miscellaneous" tab has been moved
+  here, and now additional pre/post encoding/packaging steps can be
+  specified.
+
+* GUI: Encoding using legacy or obsolete Encoders is now determined on
+  a per-project basis instead of a program-wide property. As a result,
+  the Encoder version can now be selected on the "Miscellaneous"
+  project settings tab. A restart is no longer required to switch
+  Encoder versions.
+
+* GUI: Encoding and licensing options have been moved out of the
+  "Project" menu and into new "Encode" and "Licensing" menus
+  respectively. Projects can now be built using any present Encoder
+  through a new "Build With..." menu.
+  
+* GUI: The "Encoders" tab in the general preferences window has been
+  merged into the "Project Defaults" tab. Information about the
+  required Loaders for each Encoder version can be found by hovering
+  over the respective option.
+  
+* GUI: Various bug fixes.
+
+
+Version 8.1.2 - 8 January 2014
+------------------------------
+
+* Fix for issue where a redundant if-statement followed immediately by another
+  boolean expression may cause incorrect execution. 
+
+
+Version 8.1.1 - 3 January 2014
+------------------------------
+
+* GUI: Fix for frozen window if quitting a modified project is
+  cancelled.
+
+* Fix for garbled output with the Unix Encoders if the licensing
+  lock file cannot be accessed.
+
+* Documentation updates.
+
+
+Version 8.1.0 - 9 October 2013
+------------------------------
+
+* Optional compiled code class and method name obfuscation added to
+  the PHP 5, 5.3 and 5.4 Encoders.
+
+* The obfuscation exclusion list has an enhanced syntax with separate
+  sections to specify the names of functions, classes and methods
+  that are to be excluded from obfuscation.
+
+* GUI: Added new startup panel. The startup panel displays the latest
+  news and updates related to the Encoder or Loaders, as well as
+  displaying tutorials related to using the Encoder when they become
+  available.
+  
+* GUI: Added new security checklist functionality. The strength of 
+  project encoding options is now clearly visible by looking at a
+  new coloured gauge in the status bar, and a checklist can be
+  accessed via the "Project" menu or by clicking the security gauge.
+
+* GUI: Added functionality to check support status from the program. 
+  A new indicator on the status bar indicates the current support
+  status. More detailed information can be accessed via the "About" menu,
+  or by clicking on the correspondnig status bar indicator. Support
+  can be automatically checked on start up.
+
+* GUI: Added functionality to automatically check for new Encoders and
+  Loaders on startup. An alert is given when new versions of either are
+  available for download.
+
+* GUI: Added tool bar option to close the current open project.
+  
+* GUI: Added functionality to generate random include and obfuscation keys.
+
+* GUI: Significantly decreased the time that may be required for the program 
+  to start.
+
+* GUI: Minor bug fixes.
+
+* Minor functionality changes to accommodate new GUI changes.
+
+* Fix for issue in the PHP 5.4 Encoder where optimisation of the bytecode
+  could produce an incorrect return from a function.
+
+
+Version 8.0.2 - 19 June 2013
+----------------------------
+
+* Windows: Fix for issue where network adapters may not be detected.
+
+* Fix for faulty output if no network adapters are detected.
+
+
+Version 8.0.1 - 7 June 2013
+---------------------------
+
+* Fix for potential issue with the PHP 5.4 Encoder and calls to
+  internal functions where a returned result is ignored.
+  
+
+Version 8.0.0 - 8 May 2013
+--------------------------
+
+* The PHP Encoder for PHP 5.4 language features is included.
+
+* Options for automated license acquisition and release via the Internet
+  for Linux, FreeBSD and OS X versions have been added. 
+
+* A feature to query for availability of new versions has been added.
+
+* Option to allow scripts with file based domain restrictions to have domain
+  name checks skipped when run via PHP CLI for consistency with the behaviour
+  of license based restrictions. 
+
+* Running the OS X Encoder with a relative PATH is now supported.
+
+* The obsolete version 6.5 Encoder is included in addition to the legacy
+  version 7 Encoder for cases where encoding to work with old or very old
+  Loaders is required.
+
+* GUI: Updates, minor fixes and support for PHP 5.4
+
+* Fix to jump optimisations with the PHP 5.3 Encoder for an uncommon code
+  sequence. 
+
+
+Functional changes from previous versions
+-----------------------------------------
+
+* Encoded files produced by Encoder 8.0 require a minimum of Loader
+  version 4.4.0 to function. 
+
+* License acquisition and release is now possible over the Internet with the
+  Linux, FreeBSD and OS X Encoders. 
+  
+  Use --acquire-license and --release-license for automated processing.
+
+* The manual license request and revoke file generation options from earlier
+  versions are deprecated and have been renamed in the Linux, FreeBSD and 
+  OS X editions.
+
+* The option to check for unknown extensions is now undocumented as this is
+  no longer supported. The option is still accepted for back compatibility
+  but has no effect.
+
+
+==============================================================================
+
+Version 7.0.9 - 17 Oct 2011
+---------------------------
+
+* GUI: Minor enhancement to product licensing.
+
+
+Version 7.0.8 - 19 Sep 2011
+---------------------------
+
+* GUI: Default directory for locating product license files is now
+  the documents folder.
+
+* Cosmetic documentation updates.
+
+* Fix to make_license program for displaying contents of license files
+  having a property name longer than 25 characters.
+
+
+Version 7.0.7 - 5 Aug 2011
+--------------------------
+
+* GUI: Support for online licensing of the Encoder product during
+  installation and from within the GUI.
+
+* Correction to output of --help from the make_license program.
+
+* Documentation updates and minor correction to User Guide PDF.
+
+
+Version 7.0.6 - 8 Jul 2011 (FreeBSD update only)
+------------------------------------------------
+
+* Fix issue preventing licensing the Encoder on 64 bit FreeBSD systems.
+
+
+Version 7.0.5 - 2 Jun 2011
+--------------------------
+* PHP 5.3 Encoder: Fix to optimisation mechanism for if-elseif statements.
+* PHP 5.3 Encoder: Fix to inheritance for properties of classes.
+* GUI: Allow IPF created installers to request elevation on Vista/W7 when
+  launched.
+* GUI (special edition): Fix to saving of non-default value for FTP port.
+
+
+Version 7.0.4 - 21 Apr 2011
+---------------------------
+
+* PHP 5.3 Encoder: Fixes to obfuscation of local variables.
+* GUI (special edition): FTP passive/active mode selection added 
+  to project settings.
+
+
+Version 7.0.3 - 8 Apr 2011
+---------------------------
+
+* Windows Encoders: Fix to allow removing read only files.
+* Pro/Cerberus Encoder: Option --expose-server-restrictions added to
+  make_license program.
+* GUI: Change default 'Open project' path to project samples folder.
+* GUI: IPF related features disabled if the IPF product is not installed.
+* GUI: Miscellaneous minor changes.
+* GUI: License settings option added to expose server restrictions in 
+  license files.
+* PDF: updates.
+
+
+Version 7.0.2 - 25 Feb 2011
+---------------------------
+
+* GUI: The title bar now indicates if application restart is 
+  required (after switching between legacy mode), and indicates
+  if legacy encoding mode is in operation.
+
+* GUI: Button added to browse for a custom error callback file
+  within the project source tree.
+
+* GUI: Alert to a license file incorrectly located within the install
+  folder rather than the licensing folder.
+
+* GUI: Version check option added to Help menu to check for any
+  available software update.
+
+* GUI: Fix to faulty command line generation when the custom header 
+  comments text field contained a blank line.
+
+* Fix for incorrect behaviour of --verify in the presence of 
+  user-defined classes (PHP 5.3 Encoder).
+
+* PDF: Documentation updates.
+
+
+Version 7.0.1 - 13 Jan 2011
+---------------------------
+
+* Fix for issue that could affect temporary variables in files 
+  encoded with the PHP 5.3 Encoder for certain mixed combinations
+  of Encoder and Loader platforms (PHP 5.3 Encoder).
+
+* Fix for use of unqualified global constants within namespaces
+  (PHP 5.3 Encoder).
+
+
+Version 7.0.0.3 - 13 Dec 2010
+-----------------------------
+
+* GUI: New feature added to support legacy encoding (6.5) as a user
+  preference. This brand new feature is a compatibility maximiser,
+  giving access to new features of the version 7 GUI while allowing 
+  generation of legacy encoded files. Using the version 7 Encoder is
+  recommended and is the default, but simply switch to legacy encoding
+  using version 6.5 Encoders via the preferences dialog if needing to
+  use encoded files to servers running old Loaders (pre version 4). 
+  Note that as this feature uses version 6.5 Encoders, new features 
+  of the version 7 Encoder (such as the @ syntax) are not available
+  when legacy encoding is selected.
+
+* Legacy command line Encoders (6.5) are now bundled with the
+  version 7 Encoders for compatibility maximisation.
+
+
+Version 7.0.0 - 24 Nov 2010
+---------------------------
+
+* The Encoder for the PHP 5.3 language is included in this release,
+  plus the Encoders for PHP 5 < 5.3 and PHP 4.
+
+* Source directory substitution in wildcard patterns using @
+
+  A leading @/ or @\ in the values for --keep, --ignore, --encode,
+  --copy and --encrypt is interpreted as being to the first source 
+  item specified.
+
+* Option --ignore-deprecated-warnings added to ignore deprecated
+  warnings.
+
+* Option --ignore-strict-warnings added to ignore strict language
+  usage warnings.
+
+* GUI: (File menu) The recent files and directories history now
+  indicates if an item is missing, and gives an option to remove that
+  item from the history.
+
+* GUI: Accessibility enhancements.
+
+* GUI: (Project menu) New options added to quick-build and clean the
+  current project.  The build option will process as per the project
+  settings with respect to whether an existing target is replaced,
+  updated or merged.  Quick-build will perform an update operation 
+  and only process files that are new or modified more recently than
+  the corresponding item in the target folder. Note that a
+  quick-build will not remove items in the target folder that do not
+  appear in the source folder, so a clean or full build is
+  recommended after changing the structure of the source folder.
+
+* GUI: Preferences dialog added for project defaults and other
+  settings.
+
+* GUI: New toolbar icons added for moving to the next/previous parse 
+  error within the associated file. When used, the document
+  containing the error is opened, and if supported by the editor set
+  via the preferences dialog, the cursor will be positioned at the
+  line containing the error.
+
+* GUI (user preference): The last open project can be automatically
+  opened at startup.
+
+* GUI: The PHP language used (4, 5, 5.3) is added as a visual check
+  to the title bar information.
+
+* GUI: Various bug fixes.
+
+* GUI: Event log entries optimised to show shorter paths, and
+  date/time display is available as a user preference.
+
+* GUI: Source file edit/view. Source files can now be opened in a
+  choice of editors both from the source files tree in project 
+  settings and in the relevant nodes of the event tree. 
+  The preferred editor is selected as a user preference from a list
+  that currently includes: EditPlus 3, Notepad++, GVim, PSPad,
+  Programmer's Notepad, PHP Edit or PHP Designer 2007. This list can
+  be extended if required by editing an XML document located in the
+  installation folder, using the existing entries as examples. 
+
+  If an editor supports opening of a file at a particular position, 
+  double clicking a parse error message in the event log will open
+  the source file with the cursor positioned at the line containing
+  the error.
+  
+* GUI: The export batch file option is replaced with an Export
+  Project feature. This allows a project to be exported as a Windows
+  batch file, a command line Encoder project file, or a Unix shell
+  script. The exported project script can optionally be updated
+  automatically when a project is saved.
+
+
+Functional changes from previous versions
+-----------------------------------------
+
+* Encoded files produced by Encoder 7.0 require a minimum of Loader
+  version 4.0 to function. 
+
+* Encoding with strict language rules is now the default, and does
+  not need to be enabled with --strict-php.  Deprecated warnings
+  (new from PHP 5.3) are also enabled by default.
+
+* New options --ignore-strict-warnings and
+  --ignore-deprecated-warnings can be used to suppress strict and
+  deprecated warnings.
+
+* PHP 5 Encoder: Code with var instead of public/private/protected
+  will no longer give a strict warning if strict warnings are
+  enabled.
+
+* GUI: New projects have strict language usage and deprecated
+  warnings enabled by default in the project settings (miscellaneous
+  tab).
+
+* GUI: Menu and toolbar "Encode" options renamed as "Build" options.
+
+* GUI: The "New Project" Wizard is removed for 7.0.0 and a new
+  version will be added in a future revision.
+
+* GUI: Loaders for Windows and Linux are no longer included with the
+  product installation to reduce initial download size and to reduce
+  the chance of obtaining out of date Loaders. If Loaders are
+  required and/or the Loader bundling feature is desired to be used,
+  the exact Loaders required can be easily downloaded and made
+  available to the GUI after installation.  An "Add Loaders" link on
+  the Target tab in project settings now provides a quick way to
+  navigate to the relevant Loaders page on the ionCube website.
+
+Copyright (c) 2002-2022 ionCube Ltd.

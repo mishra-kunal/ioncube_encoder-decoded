@@ -1,0 +1,369 @@
+END-USER LICENSE AGREEMENT FOR THE IONCUBE PHP ENCODER (EVALUATION 
+AND NON-EVALUATION)
+
+IMPORTANT - YOU SHOULD CAREFULLY READ THE FOLLOWING TERMS AND 
+CONDITIONS BEFORE USING THE ENCODER SOFTWARE. THE INSTALLATION 
+AND/OR USE OR COPYING OF THE IONCUBE PHP ENCODER SOFTWARE INDICATES 
+YOUR ACCEPTANCE OF THIS LICENSE AGREEMENT. IF YOU DO NOT ACCEPT THE 
+TERMS OF THIS LICENSE AGREEMENT, DO NOT INSTALL, COPY OR USE THE 
+ENCODER SOFTWARE.
+
+DEFINITIONS
+
+The following definitions shall apply in this document:
+
+PRODUCT/ENCODER shall mean the ionCube PHP Encoder software package 
+(evaluation and non-evaluation version) including any modifications 
+or upgrades to the software used for encoding PHP scripts to render 
+them non-humanly readable and any associated documentation or 
+electronic or online materials relating to the software.
+
+ENCODED FILE shall mean a non-humanly readable file produced by the 
+Encoder being derived from humanly readable PHP script source.
+
+PROVIDER shall mean ionCube Ltd., UK company 04562963.
+
+BUSINESS ENTITY shall mean any body of users, for example a company 
+or organisation, with a single primary business purpose.
+
+USER/YOU/LICENSEE shall mean any individual or business entity who 
+has purchased a license for the non-evaluation version, or 
+downloaded the free evaluation version of the Product.
+
+MAJOR VERSION NUMBER shall mean the number preceding the first 
+decimal point (.) in the Product version number.
+
+MINOR UPGRADE or UPGRADE shall mean a Product release where the 
+Major Version Number is the same as for the previously released 
+Product version.
+
+MAJOR RELEASE shall mean a Product release where the Major Version 
+Number is different to that of the previously released Product 
+version.
+
+PRIMARY LICENSE shall mean the first license purchased to use the 
+Product.
+
+ADDITIONAL LICENSE shall mean a license purchased to use the 
+Product on an additional machine.
+
+1 LICENSE ENTITLEMENT 
+
+1.1 The Product is licensed not sold.  Title to the Product does 
+not pass to the User in any circumstances.  The Product is supplied 
+in object code.
+
+1.2 The Provider grants a personal, non-transferable, non-exclusive 
+license to use the Product in accordance with the terms and 
+conditions of this EULA.
+
+1.3 Downloading of the evaluation Product entitles the User to 
+install and use the Product for its own internal lawful purposes 
+and in accordance with the terms set out in this EULA on any 
+machines as necessary to adequately evaluate the software.
+
+1.4 Downloading of the licensed Product entitles the User to 
+install and use the Product for its own internal lawful purposes in 
+accordance with the terms set out in this EULA on any licensed 
+machines. The software is normally provided with a license 
+allocation for one machine as standard, and additional licenses may 
+be purchased separately as required. 
+
+1.5 The licensee is entitled to use the Product solely for the 
+purpose of processing files where the licensee is the only 
+beneficiary of the encoding.
+
+1.6 Encoding scripts developed by the licensee where a third party 
+has requested the files to be encoded in order to benefit from the 
+encoding is not permitted.
+
+1.7 The Encoder is not "for hire", and providing any form of 
+Encoding service that uses the Encoder for the purposes of encoding 
+third party scripts and where a third party is benefitting from the 
+encoding service is expressly forbidden.
+
+
+2 DISTRIBUTION 
+
+2.1 The Product may not be redistributed to any third party.
+
+2.2 The making of reasonable copies for back-up security purposes 
+is permitted, provided all copies made include all copyright and 
+proprietary notices of the Provider.
+
+2.3 Keeping reasonable copies of the Product is permitted solely 
+for onsite or offsite back-up purposes.
+
+2.4 Without the express permission of the Provider, the Product may 
+under no circumstances be embedded inside another product, nor 
+branded as another product, whether distributed or not. 
+
+2.5 Encoded files and all copies thereof may be freely distributed 
+by the User to third parties provided that the User accepts the 
+responsibility of ensuring that any party in receipt of encoded 
+files is aware of and agrees to the restrictions in this License 
+Agreement governing the use of such files (specifically clause 3).
+
+
+3 ANALYSIS / REVERSE ENGINEERING / MODIFICATION 
+
+Except insofar as the User is permitted to do so in accordance with 
+applicable law:
+
+3.1 Any analysis of the program, embedded data or license files by 
+any means and by any entity whether human or otherwise and 
+including but without limitation to discover details of internal 
+operation, to reverse engineer, to de-compile object code, or to 
+modify for the purposes of modifying behaviour is forbidden.
+
+3.2 Any analysis of encoded files by any means and by any entity 
+whether human or otherwise and including but without limitation to 
+discover details of file format or modification for the purposes of 
+modifying behaviour or scope of their usage is forbidden.
+
+
+4 LIMITED WARRANTY
+
+4.1 The functionality of the non-evaluation Product shall be in 
+accordance with the documentation or materials supplied for the 
+Product for a period of 30 days from the date the Product is 
+licensed.  The Provider does not warrant that the Product is 
+uninterrupted or error free.  This constitutes the only warranty 
+provided by the Provider in respect of the Product.
+
+4.2 The Provider will remedy any non-conformance of the Product to 
+the documentation during the warranty period by correction or 
+replacement of any defects, provided that the User promptly 
+notifies the Provider of an error occurring during the warranty 
+period and that the User can demonstrate a fault to the 
+satisfaction of the Provider.
+
+
+5 LIMITATION OF LIABILITY 
+
+5.1 IN NO EVENT WILL THE PROVIDER OF THE ENCODER BE LIABLE TO THE 
+USER OR ANY PARTY FOR ANY DIRECT, INDIRECT, PUNITIVE, SPECIAL, 
+INCIDENTAL OR OTHER CONSEQUENTIAL DAMAGES ARISING DIRECTLY OR 
+INDIRECTLY FROM THIS LICENSE AGREEMENT OR ANY USE OF THE ENCODER OR 
+ENCODED FILES, EVEN IF THE PROVIDER IS EXPRESSLY ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGES.
+
+5.2 THE ENCODER IS PROVIDED ON AN "AS IS" BASIS.  THE PROVIDER 
+EXCLUDES ALL WARRANTIES, CONDITIONS, TERMS, UNDERTAKINGS AND 
+REPRESENTATIONS (EXCLUDING FRAUDULENT MISREPRESENTATION) OF ANY 
+KIND, EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE IN CONNECTION WITH 
+THE ENCODER TO THE FULLEST EXTENT PERMITTED BY LAW.
+
+5.3 DOWNLOADING THE ENCODER IS AT YOUR OWN RISK AND THE PROVIDER 
+DOES NOT ACCEPT LIABILITY FOR ANY DIRECT OR INDIRECT LOSS OR DAMAGE 
+HOWSOEVER CAUSED AS A RESULT OF ANY COMPUTER VIRUSES, BUGS, TROJAN 
+HORSES, WORMS, SOFTWARE BOMBS OR OTHER SIMILAR PROGRAMS ARISING 
+FROM YOUR USE OF THE ENCODER.  WHILST THE PROVIDER WILL DO ITS BEST 
+TO ENSURE THAT THE ENCODER IS FREE FROM SUCH DESTRUCTIVE PROGRAMS, 
+IT IS YOUR RESPONSIBILITY TO TAKE REASONABLE PRECAUTIONS TO SCAN 
+FOR SUCH DESTRUCTIVE PROGRAMS DOWNLOADED FROM THE INTERNET.
+
+5.4 THE PROVIDER'S MAXIMUM LIABILITY FOR ANY LOSS OR DAMAGE ARISING 
+FROM THIS LICENSE AGREEMENT SHALL IN ANY EVENT BE LIMITED IN THE 
+SOLE DISCRETION OF THE PROVIDER TO THE REPLACEMENT OF THE ENCODER 
+PRODUCT OR REFUND OF THE PURCHASE PRICE PAID BY THE USER IN RESPECT 
+OF ANY SINGLE DEFAULT OR SERIES OF DEFAULTS ARISING FROM THE SAME 
+CAUSE.
+
+5.5 DUE TO THE NATURE OF THE INTERNET, THE PROVIDER CANNOT 
+GUARANTEE THAT ANY E-MAILS OR OTHER ELECTRONIC TRANSMISSIONS WILL 
+BE SENT TO YOU OR RECEIVED BY THE PROVIDER OR THAT THE CONTENT OF 
+SUCH TRANSMISSIONS WILL BE SECURE DURING TRANSMISSION.
+
+
+6 BUG FIXING, PRODUCT SUPPORT and GENERAL COMMUNICATION CONDUCT
+
+6.1 The Provider will use reasonable endeavours to provide support 
+to Users who have an existing license for the non-evaluation 
+version of the Product.  The Provider will only provide support for 
+the latest release and for up to two prior versions of the Product. 
+Product support for the evaluation version will be given during the 
+14-day evaluation period.
+
+6.2 Support comprises communication via a ticket system and the 
+telephone.  Alternative mechanisms may on occasion be offered. Core 
+support time is from 9am to 6pm time (GMT/UTC +0 or +1) Monday to 
+Friday except UK statutory and public holidays. Support may 
+additionally be available during hours outside of this period.
+
+6.3 The User accepts that on occasion the ability of the Provider 
+to meet anticipated or published support schedules may be impaired 
+due to, without limitation, Internet service provider failures, 
+software or hardware failures, that affect the ability to 
+communicate for an indeterminate period.
+
+6.4 The Provider reserves the right to refuse to provide support at 
+any time.
+
+6.5 The Provider wishes to maintain and offer a Product of the 
+highest possible quality, and at its discretion may from time to 
+time make Product changes for the purpose of correcting behaviour 
+in variance to the published specification or the User's reasonable 
+expectations. Such changes will generally be made and distributed 
+without charge.
+
+6.6 Entitlement to Product support is granted by a separate support 
+package, and is provided free of charge for a period of 3 (three) 
+months after initial purchase of the Primary License unless 
+otherwise stated. 
+
+6.7 The period of support entitlement may be extended after the 
+initial 3 months period for an additional fee. 
+
+6.8 Communication with the Provider should at all times remain 
+polite and courteous, free from profanity, and any content that may 
+be reasonably judged to be objectionable. Where communication does 
+not meet these requirements, the Provider reserves the right 
+without notice and limitation to terminate communication and to 
+restrict access to the Provider's website.
+
+
+7 PRODUCT UPGRADES and NEW RELEASES
+
+7.1 Minor Upgrades may become available from time to time that 
+change and/or enhance the features and/or existing behaviour of the 
+Product. These will be provided without charge, and will be 
+available only for the release that is licensed. Access to Minor 
+Upgrades for a product version more than two Major Releases behind 
+the current release may not be provided.
+
+7.2 Major Releases that comprise significant changes to the Product 
+may become available from time to time. A charge will usually be 
+made to move a license to a new release, which may be dependent on 
+the version of the Product currently being used.
+
+
+8 PRODUCT PRICE
+
+8.1 The price of the Product may increase or decrease at the 
+Provider's discretion with or without notice. Existing users will 
+not be liable for additional costs should the Product price 
+increase, nor be due any refund if the price decreases.
+
+8.2 All prices are exclusive of VAT and all other taxes and duties. 
+UK VAT may additionally be added in accordance with the laws of UK 
+HM Customs and Excise.
+
+8.3 All prices are in US dollars unless otherwise indicated.
+
+
+9 ERRORS AND OMISSIONS
+
+Whilst all reasonable endeavours are made to ensure the accuracy of 
+all information and documentation given concerning the Product, the 
+User accepts the possibility of inaccuracies in information 
+presented in any format, including verbal, written, printed or 
+electronic documentation, email communications and online services. 
+The Provider shall under no circumstances be liable for any events 
+that arise as a result of unintentional inaccuracies or omissions.
+
+
+10 USER INDEMNITY
+
+You agree to fully indemnify, defend and hold the Provider harmless 
+immediately upon demand from and against all actions, liability, 
+claims, losses, damages, costs and expenses (including 
+legal/attorney fees) incurred by the Provider arising directly or 
+indirectly as a result of your breach of this License Agreement.
+
+
+11 INTELLECTUAL PROPERTY RIGHTS
+
+11.1 The User acknowledges that the Product and associated 
+documentation and materials contain proprietary information of the 
+Provider and are and shall remain the exclusive property of the 
+Provider and/or its licensors and all title, copyright, trade 
+marks, trade names, patents and other intellectual property rights 
+therein of whatever nature shall remain the sole property of the 
+Provider and/or its licensors.
+
+11.2 No title to or rights of ownership, copyright or other 
+intellectual property in the Product is transferred to the User 
+(other than the license rights expressly granted in this License 
+Agreement).
+
+
+12 TERMINATION
+
+12.1 The license for the evaluation version of the Product will 
+terminate 14 days after the date of downloading, and any files 
+encoded by the User will cease to function 36 hours after being 
+encoded.
+
+12.2 The Provider reserves the right to terminate this License 
+Agreement immediately by notice in writing against the User if the 
+User is in breach of any terms and conditions of this License 
+Agreement.
+
+12.3 Termination of this License Agreement for any reason shall be 
+without prejudice to any other rights or remedies of the Provider 
+which may have arisen on or before the date of termination under 
+this License Agreement or in law.
+
+12.4 The provisions of the following clauses shall survive any 
+termination of this agreement; clause 3, 5, 11 and 14.
+
+
+13 GENERAL
+
+13.1 The Provider reserves the right to transfer or assign all or 
+any of its rights and duties and responsibilities set out in this 
+License Agreement to another party.
+
+13.2 Headings have been included for convenience only and will not 
+be used in construing any provision of this License Agreement.
+
+13.3 No delay or failure by the Provider to exercise any powers, 
+rights or remedies under this License Agreement will operate as a 
+waiver of them nor will any single or partial exercise of any such 
+powers, rights or remedies include any other or further exercise of 
+them.
+
+13.4 If any part of this License Agreement is found by a court of 
+competent jurisdiction or other competent authority to be invalid, 
+unlawful or unenforceable then such part shall be severed from the 
+remainder of this License Agreement which will continue to be valid 
+and enforceable to the fullest extent permitted by applicable law.
+
+13.5 This License Agreement including the documents or other 
+sources referred to herein supersede all prior representations, 
+understandings and agreements between the User and the Provider 
+relating to the Product and sets forth the entire agreement and 
+understanding between the User and the Provider relating to the 
+Product.
+
+13.6 Nothing in this License Agreement shall be deemed to 
+constitute a partnership between you and the Provider nor 
+constitute either party being an agent of the other party.
+
+13.7 This Agreement does not create any rights or benefits 
+enforceable by any person not a party to it (within the meaning of 
+the U.K. Contracts (Rights of Third Parties) Act 1999) except that 
+a person who under clause 13.1 is a permitted successor or assignee 
+of the rights or benefits of the Provider may enforce such rights 
+or benefits.
+
+13.8 From time to time, the Provider may with or without 
+notification revise and change the terms of this EULA. The current 
+license agreement will be available at 
+https://www.ioncube.com/legal/encoder/eula/ and notice of changes 
+may also be given without limitation by email, in-Product 
+notification or website alerts. Failure to receive notification of 
+changes does not invalidate those changes, and the continued use of 
+the Product will indicate your agreement to the changes. 
+
+
+14 GOVERNING LAW AND JURISDICTION
+
+This License Agreement and any issues relating thereto shall be 
+construed and interpreted in accordance with the laws of England 
+and subject to the exclusive jurisdiction of the English courts.
+
+
+Copyright (c) 2002-2022 ionCube Ltd.                  Last revised 
+10-Sep-2021
