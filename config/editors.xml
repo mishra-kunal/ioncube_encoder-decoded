@@ -1,0 +1,124 @@
+<!--
+  Known editors
+  (c) ionCube Ltd. 2021
+-->
+
+<editors>
+  <editor type="free" OS="OSX">
+    <name>TextEdit</name>
+	<vendor>
+      <name>Apple Inc.</name>
+    </vendor>
+	<bundle>com.apple.TextEdit</bundle>
+  </editor>
+
+  <editor type="free" OS="OSX">
+    <name>Xcode</name>
+        <vendor>
+      <name>Apple Inc.</name>
+    </vendor>
+        <bundle>com.apple.dt.Xcode</bundle>
+  </editor>
+  
+  <editor type="commercial" OS="Windows">
+    <!--HKEY_CURRENT_USER\Software\ES-Computing\EditPlus 3\Install  value:path-->
+    <name>EditPlus 3</name>
+    <url>www.editplus.com</url>
+    <download>www.editplus.com/download.html</download>
+    <vendor>
+      <name>ES-Computing</name>
+    </vendor>
+    <cli>
+      <exe>editplus.exe</exe>
+      <launch type="open">-e -w "%file%"</launch>
+      <launch type="openat">-e -cursor %line:0 -w "%file%"</launch>
+    </cli>
+  </editor>
+
+  <editor type="free" OS="Windows">
+		<name>Notepad++</name>
+		<url>notepad-plus-plus.org</url>
+    <download>sourceforge.net/projects/notepad-plus/files/</download>
+		<vendor>
+			<name>Don HO</name>	
+		</vendor>
+		<cli>
+      <exe>notepad++.exe</exe>
+			<launch type="open">-nosession "%file%"</launch>
+			<launch type="openat">-nosession -n%line% "%file%"</launch>
+		</cli>
+	</editor>	
+  
+	<editor type="free" OS="Windows">
+		<name>GVim</name>
+		<url>www.vim.org</url>
+    <download>www.vim.org/download.php#pc</download>
+		<cli>
+      <exe>
+        <key value="path">HKEY_LOCAL_MACHINE\SOFTWARE\Vim\Gvim</key>
+      </exe>
+      <launch type="open">--servername ioncube --remote-silent "%file%"</launch>
+			<launch type="openat">--servername ioncube --remote-silent +%line% "%file%"</launch>
+		</cli>
+	</editor>
+
+  <editor OS="Windows">
+    <name>PSPad</name>
+    <url>www.pspad.com</url>
+    <vendor>
+      <name>Jan Fiala, Pro-Soft s.r.o.</name>
+    </vendor>
+    <cli>
+      <exe>
+        <key value="PSPadPath">HKEY_CURRENT_USER\Software\PSPad</key>
+      </exe>
+      <launch type="open">"%file%"</launch>
+    </cli>
+  </editor>
+
+  <editor OS="Windows">
+    <name>Programmer's Notepad</name>
+    <url>www.pnotepad.org</url>
+    <vendor>
+      <name>Simon Steele</name>
+    </vendor>
+    <cli>
+      <exe>
+        <name>pn.exe</name>
+        <ukey>{52CF142B-7B0E-41E7-98F5-B834122523E7}_is1</ukey>
+      </exe>
+      <launch type="open">"%file%"</launch>
+      <launch type="openat">--line %line% "%file%"</launch>
+    </cli>
+  </editor>
+
+  <editor type="commercial" OS="Windows">
+    <name>PHP Edit</name>
+    <url>phpedit.com</url>
+    <vendor>
+      <author>Sébastien Hordeaux</author>
+      <name>WaterProof SARL</name>
+    </vendor>
+    <cli>
+      <exe>phpedit.exe</exe>
+      <launch type="open">"%file%"</launch>
+    </cli>
+  </editor>
+
+  <editor type="commercial" OS="Windows">
+    <name>PHP Designer 2007</name>
+    <url>www.mpsoftware.dk</url>
+    <vendor>
+      <author>Michael Pham</author>
+      <name>MP Software</name>
+    </vendor>
+    <cli>
+      <exe>
+        <name>phpdesigner2007pe.exe</name>
+        <ukey>PHP Designer 2007 - Personal_is1</ukey>
+      </exe>
+      <launch type="open">"%file%"</launch>
+    </cli>
+  </editor>
+</editors>
+
